@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
+    //import {getKey} from 'apikey';
     var maasInput = document.getElementById("maasGirInput");
     var btnHesapla = document.getElementById("btnHesapla");
     var maasGirisDiv = document.getElementById("maasyaz");
@@ -46,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     //["2021-01-01"]["TRY"]
     // fetch('https://freecurrencyapi.net/api/v2/latest?' + new URLSearchParams({
-    //     apikey: '',    
+    //     apikey: getKey(),    
     //     
     // }))
     // .then(response => response.json())
@@ -70,7 +71,7 @@ function validateNumber(event) {
 async function getir() {
     var sonuc;
     await fetch('https://freecurrencyapi.net/api/v2/historical?' + new URLSearchParams({
-        apikey: env.API_KEY,    
+        apikey: getKey(),    
         date_from: '2021-01-01',
         date_to: '2021-12-31',
     }))
@@ -83,7 +84,7 @@ async function getir() {
 async function anlik() {
     var sonuc;
     await fetch('https://freecurrencyapi.net/api/v2/latest?' + new URLSearchParams({
-        apikey: '',    
+        apikey: getKey(),    
         
     }))
     .then(response => response.json())
