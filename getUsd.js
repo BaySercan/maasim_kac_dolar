@@ -70,7 +70,7 @@ function validateNumber(event) {
 async function getir() {
     var sonuc;
     await fetch('https://freecurrencyapi.net/api/v2/historical?' + new URLSearchParams({
-        apikey: '',    
+        apikey: env.API_KEY,    
         date_from: '2021-01-01',
         date_to: '2021-12-31',
     }))
