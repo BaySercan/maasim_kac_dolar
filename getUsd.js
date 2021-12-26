@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             dolarBazindaAnlikMaas = maas / anlikKur;
             dbam = dolarBazindaAnlikMaas.toFixed(2); 
             maasGirisDiv.style.display = "none";
-            dolarBazindaAnlikMaasP.innerText = dbam;
+            dolarBazindaAnlikMaasP.innerText = "$ " + dbam.toString();
             grafikDiv.style.display = "block";
 
         })();
