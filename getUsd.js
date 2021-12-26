@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             dolarBazindaAnlikMaas = maas / anlikKur;
             dbam = dolarBazindaAnlikMaas.toFixed(2); 
             maasGirisDiv.style.display = "none";
-            dolarBazindaAnlikMaasP.innerText = "$ " + dbam.toString();
+            dolarBazindaAnlikMaasP.innerText = "$" + dbam.toString();
             grafikDiv.style.display = "block";
 
         })();
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         order: 2,
                         color:'#36a2eb',
                         backgroundColor: "#e755ba",
-                        borderColor: "#36a2eb",
+                        borderColor: "#b42d69",
                         yAxisID:'yKur',
                     }, {
                         label: 'Maas',
