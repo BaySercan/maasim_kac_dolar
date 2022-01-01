@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var toDate = doToDate(tarih); 
     var fromDate = doFromDate(toDate);
 
+    console.log(toDate);
+    console.log(fromDate);
+
     var siraliTarihler = MonthLastDaysDates(tarih);
     siraliTarihler.push(toDate);
     //console.log(siraliTarihler);
@@ -167,6 +170,11 @@ function doToDate(tarih) {
         ay.toString();
         ay = "0" + ay;
     }
+
+    if (gun < 10) {
+        gun.toString();
+        gun = "0" + gun;
+    }
     var yil = tarih.getFullYear();
     var toDate = yil.toString() + "-" + ay + "-" + gun.toString();
     return toDate;
@@ -174,12 +182,19 @@ function doToDate(tarih) {
 
 function doFromDate(tarih) {
     var bt = baslamaTarihiHesapla(tarih);
+    var gun = bt.getDate();
     var btAy = bt.getMonth() + 1;
     if (btAy < 10) {
         btAy.toString();
         btAy = "0" + btAy;
     }
-    var fromDate = bt.getFullYear().toString() + "-" + btAy + "-" + bt.getDate().toString();
+
+    if (gun < 10) {
+        gun.toString();
+        gun = "0" + gun;
+    }
+    
+    var fromDate = bt.getFullYear().toString() + "-" + btAy + "-" + gun.toString();
     return fromDate;
 }
 
