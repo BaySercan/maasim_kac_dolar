@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
-    //import {getKey} from 'apikey';
     var maasInput = document.getElementById("maasGirInput");
     var btnHesapla = document.getElementById("btnHesapla");
     var maasGirisDiv = document.getElementById("maasyaz");
@@ -14,26 +13,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var toDate = doToDate(tarih); 
     var fromDate = doFromDate(toDate);
 
-    console.log(toDate);
-    console.log(fromDate);
-
     var siraliTarihler = MonthLastDaysDates(tarih);
     siraliTarihler.push(toDate);
     //console.log(siraliTarihler);
 
-   
-   
     btnHesapla.addEventListener("click", function () {
         var maas = parseInt(maasInput.value,10);
-
-        if(maas && maas > 0) {
-            console.log("OK");
-        } else {
-            console.log("NOT OK!")
-        }
-
-        
-        console.log(maas);
         var anlikKur = 0;
         var aylikData = [];
         var aylikMaas = [];
@@ -41,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         (async () => {
             anlikKur = await anlik();
-            //console.log(anlikKur);
             dolarBazindaAnlikMaas = maas / anlikKur;
             dbam = dolarBazindaAnlikMaas.toFixed(2); 
             maasGirisDiv.style.display = "none";
@@ -109,15 +93,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
         })()
 
-
-
-
     });
 
-   
-    
 });
-
 
 
 function validateNumber(event) {
@@ -193,7 +171,7 @@ function doFromDate(tarih) {
         gun.toString();
         gun = "0" + gun;
     }
-    
+
     var fromDate = bt.getFullYear().toString() + "-" + btAy + "-" + gun.toString();
     return fromDate;
 }
