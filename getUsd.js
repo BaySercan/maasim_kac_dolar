@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         borderColor: "#b42d69",
                         yAxisID:'yKur',
                     }, {
-                        label: 'Maas',
+                        label: 'Dolar bazında maas',
                         data: aylikMaas,
                         type: 'line',
                         order: 1,
