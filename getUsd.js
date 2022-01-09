@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var dolarBazindaAnlikMaas;
     var tarih = new Date(Date.now());
     
+    
     const ctx = document.getElementById('myChart').getContext('2d');
     
     var toDate = doToDate(tarih); 
